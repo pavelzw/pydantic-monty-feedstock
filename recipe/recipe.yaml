@@ -28,9 +28,9 @@ build:
           - cp ${RECIPE_DIR}/cargo-auditable-wrapper.sh ${BUILD_PREFIX}/bin/cargo-auditable-wrapper
         else:
           - copy %RECIPE_DIR%\cargo-auditable-wrapper.bat %BUILD_PREFIX%\Library\bin\cargo-auditable-wrapper.bat
-      -  python -m pip install . -vv
+      - python -m pip install . -vv
       - cargo-bundle-licenses --format yaml --output ../../THIRD_PARTY.yml
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -55,7 +55,7 @@ requirements:
 tests:
   - python:
       imports:
-      - pydantic_monty
+        - pydantic_monty
       pip_check: true
 
 about:
