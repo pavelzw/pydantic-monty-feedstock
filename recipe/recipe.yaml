@@ -1,5 +1,5 @@
 context:
-  version: "0.0.1"
+  version: "0.0.2"
 
 package:
   name: pydantic-monty
@@ -9,7 +9,7 @@ source:
   # https://github.com/pydantic/monty/issues/76
   # url: https://pypi.org/packages/source/p/pydantic-monty/pydantic-monty-${{ version }}.tar.gz
   url: https://github.com/pydantic/monty/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 41651066a05933292e61cf07aae23602b593df1d8d2e24d57bef43934441db1b
+  sha256: c9b8873ae46e790278ae4c4ad0c437fb622ef1f0c367f1b28a542bc9102f7d3a
 
 build:
   script:
@@ -30,7 +30,7 @@ build:
           - copy %RECIPE_DIR%\cargo-auditable-wrapper.bat %BUILD_PREFIX%\Library\bin\cargo-auditable-wrapper.bat
       - python -m pip install . -vv
       - cargo-bundle-licenses --format yaml --output ../../THIRD_PARTY.yml
-  number: 1
+  number: 0
 
 requirements:
   build:
